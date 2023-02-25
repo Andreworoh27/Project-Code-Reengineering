@@ -1,0 +1,9 @@
+Aplikasi pengambilan absensi karyawan perusahaan
+CLI Based
+Java 11
+
+Fitur:
+    Login
+    Register
+    
+    
