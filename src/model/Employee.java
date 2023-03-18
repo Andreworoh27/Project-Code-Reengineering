@@ -1,8 +1,7 @@
-package model.user;
-
+package model;
 import java.text.SimpleDateFormat;
 
-public class User {
+public class Employee {
     private String dateFormat = "HH:mm:ss";
     private String userId = "";
     private SimpleDateFormat clockIn = new SimpleDateFormat(dateFormat);
@@ -14,11 +13,11 @@ public class User {
     private String branchId = "";
     private int salaryPerHour;
 
-    public User(){
+    public Employee(){
 
     }
 
-    public User(String name,SimpleDateFormat dob,String telephone,String address,String branchId,int salaryPerHour){
+    public Employee(String name,SimpleDateFormat dob,String telephone,String address,String branchId,int salaryPerHour){
         this.name = name;
         this.dob = dob;
         this.telephone = telephone;
@@ -150,10 +149,9 @@ public class User {
     }
 
     /**
-     * @param salaryPerHour the salaryPerHour to set
+     ** @param salaryPerHour the salaryPerHour to set
      */
     public void setSalaryPerHour(int salaryPerHour) {
         this.salaryPerHour = salaryPerHour;
     }
-
 }
