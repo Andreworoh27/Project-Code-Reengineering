@@ -1,10 +1,10 @@
 package model;
 
 public class Branch {
-    String branchId = "";
-    String branchName = "";
-    String address = "";
-    String telephone = "";
+    private String branchId = "";
+    private String branchName = "";
+    private String address = "";
+    private String telephone = "";
 
     public Branch() {
 

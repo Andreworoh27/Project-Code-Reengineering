@@ -1,73 +1,49 @@
 package model;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class Employee {
     private String dateFormat = "HH:mm:ss";
-    private String userId = "";
-    private SimpleDateFormat clockIn = new SimpleDateFormat(dateFormat);
-    private SimpleDateFormat clockOut = new SimpleDateFormat(dateFormat);
+    private String employeeId = "";
     private String name = "";
     private SimpleDateFormat dob = new SimpleDateFormat(dateFormat);
     private String telephone = "";
     private String address = "";
     private String branchId = "";
+    private String password = "";
+    private boolean isAuthenticate;
     private int salaryPerHour;
 
-    public Employee(){
+    public Employee() {
 
     }
 
-    public Employee(String name,SimpleDateFormat dob,String telephone,String address,String branchId,int salaryPerHour){
+    public Employee(String name, SimpleDateFormat dob, String telephone, String address, String branchId,
+        int salaryPerHour) {
         this.name = name;
         this.dob = dob;
         this.telephone = telephone;
         this.address = address;
         this.branchId = branchId;
         this.salaryPerHour = salaryPerHour;
-    }
-
-    
-
-    /**
-     * @return String return the userId
-     */
-    public String getUserId() {
-        return userId;
+        this.isAuthenticate = false;
     }
 
     /**
-     * @param userId the userId to set
+     * @return String return the employeeId
      */
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getemployeeId() {
+        return employeeId;
     }
 
     /**
-     * @return SimpleDateFormat return the clockIn
+     * @param employeeId the employeeId to set
      */
-    public SimpleDateFormat getClockIn() {
-        return clockIn;
-    }
-
-    /**
-     * @param clockIn the clockIn to set
-     */
-    public void setClockIn(SimpleDateFormat clockIn) {
-        this.clockIn = clockIn;
-    }
-
-    /**
-     * @return SimpleDateFormat return the clockOut
-     */
-    public SimpleDateFormat getClockOut() {
-        return clockOut;
-    }
-
-    /**
-     * @param clockOut the clockOut to set
-     */
-    public void setClockOut(SimpleDateFormat clockOut) {
-        this.clockOut = clockOut;
+    public void setemployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
     /**
@@ -140,7 +116,6 @@ public class Employee {
         this.branchId = branchId;
     }
 
-
     /**
      * @return int return the salaryPerHour
      */
@@ -154,4 +129,33 @@ public class Employee {
     public void setSalaryPerHour(int salaryPerHour) {
         this.salaryPerHour = salaryPerHour;
     }
+
+    public String getDateFormat() {
+        return dateFormat;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean getAuthenticate() {
+        return isAuthenticate;
+    }
+
+    public void setDateFormat(String dateFormat) {
+        this.dateFormat = dateFormat;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setAuthenticate(boolean isAuthenticate) {
+        this.isAuthenticate = isAuthenticate;
+    }
+
 }

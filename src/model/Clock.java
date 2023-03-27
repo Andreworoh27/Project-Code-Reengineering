@@ -3,8 +3,9 @@ package model;
 import java.text.SimpleDateFormat;
 
 public class Clock {
-    SimpleDateFormat clockIn = new SimpleDateFormat("HH:mm:ss");
-    SimpleDateFormat clockOut = new SimpleDateFormat("HH:mm:ss");
+    private String dateFormat = "HH:mm:ss";
+    private SimpleDateFormat clockIn = new SimpleDateFormat(dateFormat);
+    private SimpleDateFormat clockOut = new SimpleDateFormat(dateFormat);
 
     public Clock(){
 
