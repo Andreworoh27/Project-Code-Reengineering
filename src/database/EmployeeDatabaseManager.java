@@ -45,10 +45,16 @@ public class EmployeeDatabaseManager {
 
     public Employee searchEmployeeById(String id) {
         for (Employee employee : EmployeeList) {
-            if (employee.getBranchId().equals(id)) {
+            if (employee.getemployeeId().equals(id)) {
                 return employee;
             }
         }
         return null;
+    }
+
+    public static void employeeDataGenerator() {
+        EmployeeDatabaseManager db = getInstance();
+        Employee employee = new Employee("EP001", "orang 1", "0812345678", "Di rumah", 50, "tes");
+        db.addNewEmployee(employee);
     }
 }
