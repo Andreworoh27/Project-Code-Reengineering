@@ -6,21 +6,20 @@ import view.Login;
 
 public class LoginController {
     private static EmployeeDatabaseManager employeeDB = EmployeeDatabaseManager.getInstance();
+    private static Authentication authentication = Authentication.getInstance();
 
     public static boolean login(String employeeId, String password) {
         Employee employee = employeeDB.searchEmployeeById(employeeId);
-        if (employee != null) {
-            if (employee.getPassword().equals(password)) {
-                employee.setAuthenticate(true);
-                return employee.getAuthenticate();
-            }
+        if (employee != null && (employee.getPassword().equals(password))) {
+            authentication.setCurrentEmployee(employee);
+            authentication.setAuthenticate(true);
         }
-        return employee.getAuthenticate();
+        return authentication.getIsAuthenticate();
     }
 
-    public static boolean logout(String employeeId) {
-        Employee employee = employeeDB.searchEmployeeById(employeeId);
-        employee.setAuthenticate(false);
-        return employee.getAuthenticate();
+    public static boolean logout() {
+        authentication.setCurrentEmployee(null);
+        authentication.setAuthenticate(false);
+        return authentication.getIsAuthenticate();
     }
 }
