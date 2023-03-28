@@ -4,28 +4,31 @@ import java.text.SimpleDateFormat;
 
 public class Clock {
     private String dateFormat = "HH:mm:ss";
-    private SimpleDateFormat clockIn = new SimpleDateFormat(dateFormat);
-    private SimpleDateFormat clockOut = new SimpleDateFormat(dateFormat);
+    private String clockIn = "";
+    private String clockOut = "";
 
-    public Clock(){
+    public Clock() {
 
     }
 
-    public Clock (SimpleDateFormat clockIn, SimpleDateFormat clockOut){
+    public Clock(String clockIn, String clockOut) {
         this.clockIn = clockIn;
         this.clockOut = clockOut;
     }
 
-    public SimpleDateFormat getClockIn() {
+    public String getClockIn() {
         return clockIn;
     }
-    public SimpleDateFormat getClockOut() {
+
+    public String getClockOut() {
         return clockOut;
     }
-    public void setClockIn(SimpleDateFormat clockIn) {
+
+    public void setClockIn(String clockIn) {
         this.clockIn = clockIn;
     }
-    public void setClockOut(SimpleDateFormat clockOut) {
+
+    public void setClockOut(String clockOut) {
         this.clockOut = clockOut;
     }
 }

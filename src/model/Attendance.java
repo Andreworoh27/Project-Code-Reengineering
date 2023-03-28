@@ -5,11 +5,11 @@ import java.text.SimpleDateFormat;
 public class Attendance {
     private static Integer attendanceCount = 0;
     private String attendanceId = "";
-    private SimpleDateFormat attendanceDate = new SimpleDateFormat("HH:mm:ss");
+    private String attendanceDate;
     private String userId = "";
     private Clock clock;
 
-    public Attendance() {
+    public Attendance(SimpleDateFormat attendaceDate, String userId, Clock clock) {
         attendanceId = String.format("AT%3d", attendanceCount++);
     }
 
@@ -17,12 +17,12 @@ public class Attendance {
         return attendanceCount;
     }
 
-    public SimpleDateFormat getAttendanceDate() {
-        return attendanceDate;
-    }
-
     public String getAttendanceId() {
         return attendanceId;
+    }
+
+    public String getAttendanceDate() {
+        return attendanceDate;
     }
 
     public Clock getClock() {
@@ -37,7 +37,7 @@ public class Attendance {
         Attendance.attendanceCount = attendanceCount;
     }
 
-    public void setAttendanceDate(SimpleDateFormat attendanceDate) {
+    public void setAttendanceDate(String attendanceDate) {
         this.attendanceDate = attendanceDate;
     }
 

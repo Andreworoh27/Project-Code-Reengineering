@@ -9,27 +9,22 @@ public class Employee {
     private String dateFormat = "HH:mm:ss";
     private String employeeId = "";
     private String name = "";
-    private SimpleDateFormat dob = new SimpleDateFormat(dateFormat);
     private String telephone = "";
     private String address = "";
-    private String branchId = "";
     private String password = "";
-    private boolean isAuthenticate;
     private int salaryPerHour;
 
     public Employee() {
 
     }
 
-    public Employee(String name, SimpleDateFormat dob, String telephone, String address, String branchId,
-        int salaryPerHour) {
+    public Employee(String employeeId, String name, String telephone, String address, int salaryPerHour, String password) {
+        this.employeeId = employeeId; 
         this.name = name;
-        this.dob = dob;
         this.telephone = telephone;
         this.address = address;
-        this.branchId = branchId;
         this.salaryPerHour = salaryPerHour;
-        this.isAuthenticate = false;
+        this.password = password;
     }
 
     /**
@@ -61,20 +56,6 @@ public class Employee {
     }
 
     /**
-     * @return SimpleDateFormat return the dob
-     */
-    public SimpleDateFormat getDob() {
-        return dob;
-    }
-
-    /**
-     * @param dob the dob to set
-     */
-    public void setDob(SimpleDateFormat dob) {
-        this.dob = dob;
-    }
-
-    /**
      * @return String return the telephone
      */
     public String getTelephone() {
@@ -103,20 +84,6 @@ public class Employee {
     }
 
     /**
-     * @return String return the branchId
-     */
-    public String getBranchId() {
-        return branchId;
-    }
-
-    /**
-     * @param branchId the branchId to set
-     */
-    public void setBranchId(String branchId) {
-        this.branchId = branchId;
-    }
-
-    /**
      * @return int return the salaryPerHour
      */
     public int getSalaryPerHour() {
@@ -138,10 +105,6 @@ public class Employee {
         return password;
     }
 
-    public boolean getAuthenticate() {
-        return isAuthenticate;
-    }
-
     public void setDateFormat(String dateFormat) {
         this.dateFormat = dateFormat;
     }
@@ -152,10 +115,6 @@ public class Employee {
 
     public String getEmployeeId() {
         return employeeId;
-    }
-
-    public void setAuthenticate(boolean isAuthenticate) {
-        this.isAuthenticate = isAuthenticate;
     }
 
 }
