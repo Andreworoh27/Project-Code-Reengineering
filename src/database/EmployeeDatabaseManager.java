@@ -45,7 +45,7 @@ public class EmployeeDatabaseManager {
 
     public Employee searchEmployeeById(String id) {
         for (Employee employee : EmployeeList) {
-            if (employee.getemployeeId().equals(id)) {
+            if (employee.getemployeeId().equalsIgnoreCase(id)) {
                 return employee;
             }
         }
@@ -54,7 +54,7 @@ public class EmployeeDatabaseManager {
 
     public static void employeeDataGenerator() {
         EmployeeDatabaseManager db = getInstance();
-        Employee employee = new Employee("EP001", "orang 1", "0812345678", "Di rumah", 50, "tes");
+        Employee employee = new Employee("EP001", "orang 1", "0812345678", "Di rumah", 50, "test");
         db.addNewEmployee(employee);
     }
 }
