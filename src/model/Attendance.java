@@ -3,17 +3,21 @@ package model;
 import java.text.SimpleDateFormat;
 
 public class Attendance {
-    private static Integer attendanceCount = 0;
+    private Integer attendanceCount = 0;
     private String attendanceId = "";
-    private String attendanceDate;
+    private String attendanceDate = "";
     private String userId = "";
     private Clock clock;
 
-    public Attendance(SimpleDateFormat attendaceDate, String userId, Clock clock) {
-        attendanceId = String.format("AT%3d", attendanceCount++);
+    public Attendance(String attendaceDate, String userId, Clock clock) {
+        attendanceId = String.format("AT%3d", attendanceCount + 1);
+        this.attendanceDate = attendaceDate;
+        this.userId = userId;
+        this.clock = clock;
+        attendanceCount++;
     }
 
-    public static Integer getAttendanceCount() {
+    public Integer getAttendanceCount() {
         return attendanceCount;
     }
 
@@ -33,8 +37,8 @@ public class Attendance {
         return userId;
     }
 
-    public static void setAttendanceCount(Integer attendanceCount) {
-        Attendance.attendanceCount = attendanceCount;
+    public void setAttendanceCount(Integer attendanceCount) {
+        this.attendanceCount = attendanceCount;
     }
 
     public void setAttendanceDate(String attendanceDate) {

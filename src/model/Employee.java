@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 public class Employee {
-    private String dateFormat = "HH:mm:ss";
     private String employeeId = "";
     private String name = "";
     private String telephone = "";
@@ -18,8 +17,9 @@ public class Employee {
 
     }
 
-    public Employee(String employeeId, String name, String telephone, String address, int salaryPerHour, String password) {
-        this.employeeId = employeeId; 
+    public Employee(String employeeId, String name, String telephone, String address, int salaryPerHour,
+            String password) {
+        this.employeeId = employeeId;
         this.name = name;
         this.telephone = telephone;
         this.address = address;
@@ -97,16 +97,8 @@ public class Employee {
         this.salaryPerHour = salaryPerHour;
     }
 
-    public String getDateFormat() {
-        return dateFormat;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setDateFormat(String dateFormat) {
-        this.dateFormat = dateFormat;
     }
 
     public void setPassword(String password) {

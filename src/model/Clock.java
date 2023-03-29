@@ -3,7 +3,6 @@ package model;
 import java.text.SimpleDateFormat;
 
 public class Clock {
-    private String dateFormat = "HH:mm:ss";
     private String clockIn = "";
     private String clockOut = "";
 
