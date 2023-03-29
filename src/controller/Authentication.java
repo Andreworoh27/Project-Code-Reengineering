@@ -19,7 +19,7 @@ public class Authentication {
         }
         return instace;
     }
-
+    
     public Employee getCurrentUser() {
         return employee;
     }

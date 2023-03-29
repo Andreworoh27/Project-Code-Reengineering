@@ -17,9 +17,8 @@ public class LoginController {
         return authentication.getIsAuthenticate();
     }
 
-    public static boolean logout() {
+    public static void logout() {
         authentication.setCurrentEmployee(null);
         authentication.setAuthenticate(false);
-        return authentication.getIsAuthenticate();
     }
 }
