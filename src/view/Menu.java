@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 import controller.AttendanceController;
 import controller.Authentication;
+import controller.EmployeeController;
+import controller.LoginController;
+import model.Employee;
 
 public class Menu {
     static Scanner scan = new Scanner(System.in);
@@ -41,7 +44,7 @@ public class Menu {
                 case 2:
                     break;
                 case 3:
-                    break;
+                    return;
                 default:
                     break;
 
@@ -49,15 +52,48 @@ public class Menu {
         } while (!Authentication.getIsAuthenticate());
     }
 
+    public static void showUserInformation() {
+        Employee employee = EmployeeController.getUser();
+        System.out.println("Your account information : ");
+        System.out.println("Employee ID : " + employee.getEmployeeId());
+        System.out.println("Employee Name : " + employee.getName());
+        System.out.println("Employee Address : " + employee.getAddress());
+        System.out.println("Employee Phone Number : " + employee.getTelephone());
+        System.out.println("Employee Salary Per Hour : " + employee.getSalaryPerHour());
+    }
+
     public static void mainMenu() {
-        System.out.println("Main menu : ");
-        System.out.println("1. Attend");
-        System.out.println("2. Get User Info");
-        System.out.println("3. Logout");
-        int option = getOption(1, 3);
-        switch (option) {
-            case 1:
-                AttendanceController.attend();
-        }
+        do {
+            System.out.println("Main menu : ");
+            System.out.println("1. Attend");
+            System.out.println("2. Get User Info");
+            System.out.println("3. Logout");
+            int option = getOption(1, 3);
+            switch (option) {
+                case 1:
+                    switch (AttendanceController.attend()) {
+                        case 0:
+                            System.out.println("Clock in success");
+                            break;
+                        case 1:
+                            System.out.println("Clock out success");
+                            break;
+                        default:
+                            System.out.println("Already clock in and clock out");
+                            break;
+                    }
+                    break;
+                case 2:
+                    showUserInformation();
+                    break;
+                case 3:
+                    LoginController.logout();
+                    return;
+                default:
+                    System.out.println("Invalid input");
+                    break;
+
+            }
+        } while (true);
     }
 }

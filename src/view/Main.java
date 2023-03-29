@@ -16,8 +16,7 @@ public class Main {
 			System.out.println(employee.getemployeeId());
 			System.out.println(employee.getPassword());
 		}
-		// Menu.homePage();
-		Menu.mainMenu();
+		Menu.homePage();
 	}
 
 	public static void main(String[] args) {
