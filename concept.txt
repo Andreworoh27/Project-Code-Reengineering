@@ -1,8 +1,0 @@
-Aplikasi pengambilan absensi karyawan perusahaan
-CLI Based
-Java 11
-
-1. login 
-    - login pake userId, kalo ada return true, kalo gaada return false
-    
-    
